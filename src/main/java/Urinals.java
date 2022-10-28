@@ -40,24 +40,27 @@ public class Urinals {
 
         for(String s: inputs) {
             int cnt = 0;
+            System.out.println("\nYES");
             for (int i = 0; i < s.length(); i++) {
                 if(s.charAt(i)=='0'){
-                    if (i == 0 && s.charAt(i + 1) == '0' && s.charAt(i) == '0') { // If at first element
+                    if (i == 0 && s.charAt(i + 1) == '0') { // If we're at the first element
                         cnt++;
                         s = s.substring(0, i) + '1' + s.substring(i + 1);
                     }
 
-                    else if (i == s.length() - 1 && s.charAt(i) == '0' && s.charAt(i - 1) == '0') { // If at last element
+                    else if (i == s.length() - 1 && s.charAt(i - 1) == '0') { // If we reached the last element
                         cnt++;
                         s = s.substring(0, i) + '1' + s.substring(i + 1);
                     }
 
-                    else if (s.charAt(i - 1) == '0' && s.charAt(i) == '0' && s.charAt(i + 1) == '0') { // If in the middle
+                    else if (s.charAt(i + 1) == '0' && s.charAt(i - 1) == '0') {
                         cnt++;
                         s = s.substring(0, i) + "1" + s.substring(i + 1);
                     }
                 }
             }
+            if(cnt==0)
+                cnt=-1;
             ans.add(cnt);
         }
         return ans;
