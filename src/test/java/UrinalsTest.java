@@ -30,8 +30,8 @@ class UrinalsTest {
     @Test
     void checkString() {
         ArrayList<Integer> ans = new ArrayList<>();
-        ans.add(1);
         ans.add(2);
+        ans.add(3);
         ans.add(2);
 
         ArrayList<String> inputs = new ArrayList<>();

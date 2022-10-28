@@ -40,16 +40,25 @@ public class Urinals {
 
         for(String s: inputs) {
             int cnt = 0;
-            for (int i = 1; i < s.length()-1; i++) {
+            for (int i = 0; i < s.length(); i++) {
                 if(s.charAt(i)=='0'){
-                    if (s.charAt(i - 1) == '0' && s.charAt(i) == '0' && s.charAt(i + 1) == '0') { // If in the middle
+                    if (i == 0 && s.charAt(i + 1) == '0' && s.charAt(i) == '0') { // If at first element
+                        cnt++;
+                        s = s.substring(0, i) + '1' + s.substring(i + 1);
+                    }
+
+                    else if (i == s.length() - 1 && s.charAt(i) == '0' && s.charAt(i - 1) == '0') { // If at last element
+                        cnt++;
+                        s = s.substring(0, i) + '1' + s.substring(i + 1);
+                    }
+
+                    else if (s.charAt(i - 1) == '0' && s.charAt(i) == '0' && s.charAt(i + 1) == '0') { // If in the middle
                         cnt++;
                         s = s.substring(0, i) + "1" + s.substring(i + 1);
                     }
                 }
             }
             ans.add(cnt);
-            cnt=0;
         }
         return ans;
     }
