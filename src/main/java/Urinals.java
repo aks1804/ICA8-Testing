@@ -84,11 +84,11 @@ public class Urinals {
         int i=0;
         while(true) {
             int j=i;
-            String filename = new String();
+            String filename;
             if(j==0)
                 filename = "rule.txt";
             else
-                filename = "rule" + String.valueOf(i) + ".txt";
+                filename = "rule" + i + ".txt";
 
             try {
                 File create = new File(filename);
@@ -119,7 +119,7 @@ public class Urinals {
 
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         String filename = "urinals.dat";
         ArrayList<String> inputs = readFile(filename);
         ArrayList<Integer> ans = checkString(inputs);

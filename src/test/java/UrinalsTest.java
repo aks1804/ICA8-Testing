@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UrinalsTest {
 
     @org.junit.jupiter.api.Test
-    void readFile() throws Exception {
+    void readFile(){
         String filename = "urinals.dat";
         ArrayList<String> inputs = new ArrayList<>();
 
