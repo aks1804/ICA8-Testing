@@ -9,7 +9,11 @@ class UrinalsTest {
         String filename = "urinals.dat";
         ArrayList<String> inputs = new ArrayList<>();
 
-        System.out.println("====== Akshat Nambiar == TEST ONE EXECUTED == FileNotFoundException =======");
+        System.out.println("Akshat Nambiar - TEST ONE EXECUTED - FileNotFoundException");
         assertEquals(inputs, Urinals.readFile(filename));
+
+        System.out.println("Akshat Nambiar - TEST TWO EXECUTED - Empty File");
+        assertEquals(inputs, Urinals.readFile(filename));
+
     }
 }

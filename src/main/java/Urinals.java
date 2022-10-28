@@ -26,6 +26,12 @@ public class Urinals {
             System.out.println("File does not exist");
             return inputs;
         }
+
+        if(inputs==null){
+            System.out.println("File is empty");
+            return inputs;
+        }
+
         return inputs;
     }
 
