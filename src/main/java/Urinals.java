@@ -66,20 +66,43 @@ public class Urinals {
     }
 
     static int writeFile(ArrayList<Integer> ans){
-        try {
-            File create = new File("rule.txt");
-            if (create.createNewFile()) {
-                System.out.println("File created: " + create.getName());
-                return 1;
+        int i=0;
+        while(true) {
+            int j=i;
+            String filename = new String();
+            if(j==0)
+                filename = "rule.txt";
+            else
+                filename = "rule" + String.valueOf(i) + ".txt";
+
+            try {
+                File create = new File(filename);
+                if (create.createNewFile()) {
+                    System.out.println("File created: " + create.getName());
+                    if(!ans.isEmpty()) {
+                        try {
+                            FileWriter writer = new FileWriter(filename);
+                            for (int val : ans) {
+                                writer.write(val + "\n");
+                            }
+                            writer.close();
+                            System.out.println("Successfully wrote to the file.");
+                        } catch (IOException e) {
+                            System.out.println("An error occurred.");
+                            e.printStackTrace();
+                        }
+                    }
+                    return 1;
+                } else {
+                    i++;
+                }
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                return -1;
             }
-            else {
-                System.out.println("File already exists");
-                return 0;
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            return -1;
         }
+
+
     }
 
     public static void main(String args[]){

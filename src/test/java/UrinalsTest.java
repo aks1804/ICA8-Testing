@@ -49,15 +49,29 @@ class UrinalsTest {
 
     @Test
     void writeFile() {
+
+
+        System.out.println("\n\n\nwriteFile() Test:");
+
         ArrayList<Integer> ans = new ArrayList<>();
+
+        System.out.println("\nAkshat Nambiar - TEST ONE EXECUTED - Check if File Created");
+        assertEquals(1, Urinals.writeFile(ans));
+
+        /*  Unit test not needed as new file is always created when file exists
+        System.out.println("\nAkshat Nambiar - TEST TWO EXECUTED - Check if File Exists\"");
+        assertEquals(0, Urinals.writeFile(ans));
+        */
+
         ans.add(2);
         ans.add(3);
         ans.add(2);
         ans.add(-1);
 
-
-        System.out.println("\n\n\nwriteFile() Test:");
-
+        System.out.println("\nAkshat Nambiar - TEST THREE EXECUTED - File Created and Written");
         assertEquals(1, Urinals.writeFile(ans));
+
+
+
     }
 }
