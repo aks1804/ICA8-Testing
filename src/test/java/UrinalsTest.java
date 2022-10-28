@@ -46,4 +46,18 @@ class UrinalsTest {
         System.out.println("\nAkshat Nambiar - TEST ONE EXECUTED - Check Value Correct");
         assertEquals(ans, Urinals.checkString(inputs));
     }
+
+    @Test
+    void writeFile() {
+        ArrayList<Integer> ans = new ArrayList<>();
+        ans.add(2);
+        ans.add(3);
+        ans.add(2);
+        ans.add(-1);
+
+
+        System.out.println("\n\n\nwriteFile() Test:");
+
+        assertEquals(1, Urinals.writeFile(ans));
+    }
 }

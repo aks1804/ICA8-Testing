@@ -40,7 +40,6 @@ public class Urinals {
 
         for(String s: inputs) {
             int cnt = 0;
-            System.out.println("\nYES");
             for (int i = 0; i < s.length(); i++) {
                 if(s.charAt(i)=='0'){
                     if (i == 0 && s.charAt(i + 1) == '0') { // If we're at the first element
@@ -64,6 +63,23 @@ public class Urinals {
             ans.add(cnt);
         }
         return ans;
+    }
+
+    static int writeFile(ArrayList<Integer> ans){
+        try {
+            File create = new File("rule.txt");
+            if (create.createNewFile()) {
+                System.out.println("File created: " + create.getName());
+                return 1;
+            }
+            else {
+                System.out.println("File already exists");
+                return 0;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            return -1;
+        }
     }
 
     public static void main(String args[]){
