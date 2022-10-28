@@ -17,7 +17,6 @@ public class Urinals {
             myReader = new Scanner(reader);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                data = data.concat("0");
                 inputs.add(data);
             }
             myReader.close();
@@ -27,7 +26,7 @@ public class Urinals {
             return inputs;
         }
 
-        if(inputs==null){
+        if(inputs.isEmpty()){
             System.out.println("File is empty");
             return inputs;
         }
