@@ -40,13 +40,28 @@ public class Urinals {
 
         for(String s: inputs) {
             int cnt = 0;
+            if(s.length()==1){
+                if(s.charAt(0)=='0')
+                    ans.add(1);
+                else
+                    ans.add(-1);
+                continue;
+            }
+
+            if(s.length()==2){
+                if(s.charAt(0)=='0' && s.charAt(1)=='0')
+                    ans.add(1);
+                else
+                    ans.add(-1);
+                continue;
+            }
+
             for (int i = 0; i < s.length(); i++) {
                 if(s.charAt(i)=='0'){
                     if (i == 0 && s.charAt(i + 1) == '0') { // If we're at the first element
                         cnt++;
                         s = s.substring(0, i) + '1' + s.substring(i + 1);
                     }
-
                     else if (i == s.length() - 1 && s.charAt(i - 1) == '0') { // If we reached the last element
                         cnt++;
                         s = s.substring(0, i) + '1' + s.substring(i + 1);
@@ -89,7 +104,6 @@ public class Urinals {
                             System.out.println("Successfully wrote to the file.");
                         } catch (IOException e) {
                             System.out.println("An error occurred.");
-                            e.printStackTrace();
                         }
                     }
                     return 1;
@@ -106,6 +120,9 @@ public class Urinals {
     }
 
     public static void main(String args[]){
+        String filename = "urinals.dat";
+        ArrayList<String> inputs = readFile(filename);
+        ArrayList<Integer> ans = checkString(inputs);
+        writeFile(ans);
     }
-
 }
