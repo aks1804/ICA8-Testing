@@ -11,7 +11,7 @@ class UrinalsTest {
         String filename = "urinals.dat";
         ArrayList<String> inputs = new ArrayList<>();
 
-        System.out.println("readFile() Test:");
+        System.out.println("\n\n\nreadFile() Test:");
 
         System.out.println("\nAkshat Nambiar - TEST ONE EXECUTED - FileNotFoundException");
         assertEquals(inputs, Urinals.readFile("diffile.dat"));
@@ -19,8 +19,18 @@ class UrinalsTest {
         System.out.println("\nAkshat Nambiar - TEST TWO EXECUTED - Empty File");
         assertEquals(inputs, Urinals.readFile("urinals_test.dat"));
 
-        inputs.add("101");
-        inputs.add("1011");
+        inputs.add("1010000");
+        inputs.add("0000000");
+        inputs.add("1111111");
+        inputs.add("100010001");
+        inputs.add("00");
+        inputs.add("001");
+        inputs.add("100100");
+        inputs.add("10");
+        inputs.add("000001");
+        inputs.add("0");
+        inputs.add("1");
+        inputs.add("100");
 
         System.out.println("\nAkshat Nambiar - TEST THREE EXECUTED - Successful File Read");
         assertEquals(inputs, Urinals.readFile(filename));
@@ -41,7 +51,7 @@ class UrinalsTest {
         inputs.add("0001010001");
         inputs.add("011");
 
-        System.out.println("\n\n\nreadFile() Test:");
+        System.out.println("\n\n\ncheckString() Test:");
 
         System.out.println("\nAkshat Nambiar - TEST ONE EXECUTED - Check Value Correct");
         assertEquals(ans, Urinals.checkString(inputs));
